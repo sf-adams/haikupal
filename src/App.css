@@ -9,32 +9,42 @@ body {
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(to right bottom, #736FE0, #31C6DA);
   background-size: cover;
   background-repeat: no-repeat;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #10141a;
+  color: #fcfcfc;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .haiku {
-  background-color: #19202A;
+  background-color: #19202a;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   padding: 3rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.25);
 }
 
 .haiku__line {
-  border: 1px solid #242D3A;
+  border: 1px solid #242d3a;
   border-radius: 0.25rem;
-  font-size: 1.5rem;
-  transition: box-shadow 0.3s ease;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  transition: box-shadow 0.5s ease;
+  color: #fcfcfc;
 }
 
 .correct {
-  box-shadow: 0 0 20px 5px green;
+  box-shadow: 0 0 10vw 0vw #01e3ef, 0 0 2vw 0.4vw #01b9c2,
+    inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #01b9c2,
+    inset 0 0 0.5vw 0.2vw #09747a;
 }
 
 .incorrect {

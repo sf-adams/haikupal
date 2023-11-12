@@ -18,6 +18,7 @@ function App() {
 
   return (
     <main>
+      <h2 className="title">Haikupal</h2>
       <form className="haiku">
         <Input
           line="line1"
