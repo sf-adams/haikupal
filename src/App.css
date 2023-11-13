@@ -10,6 +10,7 @@ body {
   background-repeat: no-repeat;
   background-color: #10141a;
   color: #fcfcfc;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -18,10 +19,20 @@ main {
   padding: 3rem 0;
 }
 
-.title {
-  font-family: Arial, Helvetica, sans-serif;
+.intro {
   padding-left: 1rem;
+}
+
+.intro__title {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
+}
+
+.intro__text {
+  opacity: 0.75;
+}
+
+.intro__list {
 }
 
 .haiku {
@@ -29,34 +40,51 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.25);
 }
 
 .haiku__line {
-  border: 1px solid #242d3a;
+  border: 1px solid #323d4c;
   border-radius: 0.5rem;
   font-size: 1.25rem;
   padding: 0.75rem 1rem;
   background-color: transparent;
   transition: box-shadow 0.5s ease-out, border-color 0.3s ease-in-out;
-  color: #fcfcfc;
+  color: #fcfcfc90;
   outline: none;
 }
 
 .correct:focus {
-  border-color: #61EF61;
-  box-shadow: 0 0 20px #61EF6160, inset 0 0 10px #61EF6140,
-    0 2px 0 #000;
+  border-color: #61ef61;
+  box-shadow: 0 0 20px #61ef6160, inset 0 0 10px #61ef6140, 0 2px 0 #000;
   color: #efe;
   outline: none;
 }
 
 .incorrect:focus {
   border-color: #f95050;
-  box-shadow: 0 0 20px #f9505085, inset 0 0 10px #f9505060,
-    0 1px 0 #000;
+  box-shadow: 0 0 20px #f9505085, inset 0 0 10px #f9505060, 0 1px 0 #000;
   color: #efe;
   outline: none;
+}
+
+.haiku__submit {
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  font-family: inherit;
+}
+
+.haiku__submit:hover {
+  opacity: 0.9;
+}
+
+.haiku__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

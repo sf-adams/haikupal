@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { syllable } from "syllable";
 import Input from "./Input";
 import "./App.css";
 
@@ -16,9 +17,20 @@ function App() {
     }));
   };
 
+  const validHaiku =
+    syllable(haiku.line1) === 5 &&
+    syllable(haiku.line2) === 7 &&
+    syllable(haiku.line3) === 5;
+
   return (
     <main>
-      <h2 className="title">Haikupal</h2>
+      <div className="intro">
+        <h2 className="intro__title">🇯🇵 Haikupal</h2>
+        <p className="intro__text">
+          5-7-5 is your new best friend. Enter your haiku, generate an
+          image and share your masterpiece.
+        </p>
+      </div>
       <form className="haiku">
         <Input
           line="line1"
@@ -38,7 +50,9 @@ function App() {
           haiku={haiku}
           handleInput={handleInput}
         />
-        <button type="submit">Submit</button>
+        <button className="haiku__submit" type="submit" disabled={!validHaiku} onClick={() => console.log("Generate")}>
+          Submit
+        </button>
       </form>
     </main>
   );
