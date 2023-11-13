@@ -5,20 +5,23 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-main {
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
   background-color: #10141a;
   color: #fcfcfc;
 }
 
+main {
+  max-width: clamp(275px, 90vw, 500px);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
 .title {
   font-family: Arial, Helvetica, sans-serif;
+  padding-left: 1rem;
+  font-size: 2rem;
 }
 
 .haiku {
@@ -26,27 +29,34 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   border-radius: 1rem;
   box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.25);
 }
 
 .haiku__line {
   border: 1px solid #242d3a;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   background-color: transparent;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease-out, border-color 0.3s ease-in-out;
   color: #fcfcfc;
+  outline: none;
 }
 
-.correct {
-  box-shadow: 0 0 10vw 0vw #01e3ef, 0 0 2vw 0.4vw #01b9c2,
-    inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #01b9c2,
-    inset 0 0 0.5vw 0.2vw #09747a;
+.correct:focus {
+  border-color: #61EF61;
+  box-shadow: 0 0 20px #61EF6160, inset 0 0 10px #61EF6140,
+    0 2px 0 #000;
+  color: #efe;
+  outline: none;
 }
 
-.incorrect {
-  box-shadow: 0 0 20px 5px red;
+.incorrect:focus {
+  border-color: #f95050;
+  box-shadow: 0 0 20px #f9505085, inset 0 0 10px #f9505060,
+    0 1px 0 #000;
+  color: #efe;
+  outline: none;
 }
